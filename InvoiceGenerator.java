@@ -24,16 +24,6 @@ public class InvoiceGenerator {
 		return invoiceSummary;
 	}
 	
-	/**
-	 * UC 4
-	 * 
-	 * @param userId
-	 * @param rides
-	 */
-	public void addRides(String userId, Ride[] rides) {
-		rideRepository.addRides(userId, rides);
-	}
-	
 	public InvoiceSummary getInvoiceSummary(String userId) {
 		return this.calculateFare(rideRepository.getRides(userId));
 	}
