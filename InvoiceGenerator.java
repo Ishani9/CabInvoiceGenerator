@@ -12,6 +12,20 @@ public class InvoiceGenerator {
 			return MINIMUM_FARE;
 		}
 		return totalFare;
-	}	
+	}
+	
+	/**
+	 * UC 2
+	 * 
+	 * @param multipleRides
+	 * @return
+	 */
+	public double calculateFare(Ride[] rides) {
+		double totalFare = 0;
+		for (Ride ride : rides) {
+			totalFare = totalFare + this.calculateFare(ride.distance, ride.time);
+		}
+		return totalFare;
+	}
 
 }

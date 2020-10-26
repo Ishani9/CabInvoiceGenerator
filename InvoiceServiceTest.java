@@ -24,4 +24,19 @@ public class InvoiceServiceTest {
 		assertEquals(cfare, fare);
 	}
 	
+	/**
+	 * UC 2
+	 * 
+	 */
+	@Test
+	public void givenMultipleRides_shouldReturn_TotalFare() {
+		InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
+		Ride[] rides = { new Ride(2.0, 5),
+				         new Ride(0.1, 1)
+		               };
+		Double fare = invoiceGenerator.calculateFare(rides);
+		Double cfare = 30.0;
+		assertEquals(cfare, fare);	
+	}
+	
 }
