@@ -56,7 +56,8 @@ public class InvoiceServiceTest {
 		         new Ride(CabRide.PREMIUM, 0.1, 1),
 		         new Ride(CabRide.NORMAL, 0.1, 3)
               };
-		invoiceGenerator.addRides(userID1, rides1);
+		rideRepository.addRides(userID1, rides1);
+		invoiceGenerator.setRideRepository(rideRepository);
 		InvoiceSummary summary = invoiceGenerator.getInvoiceSummary(userID1);
 		InvoiceSummary expectedInvoiceSummary = new InvoiceSummary(3, 50);
 		assertEquals(expectedInvoiceSummary, summary);
@@ -65,7 +66,8 @@ public class InvoiceServiceTest {
 		Ride[] rides2 = { new Ride(CabRide.NORMAL, 2.0, 5),
 		         new Ride(CabRide.PREMIUM, 0.1, 1)
               };
-		invoiceGenerator.addRides(userID2, rides2);
+		rideRepository.addRides(userID2, rides2);
+		invoiceGenerator.setRideRepository(rideRepository);
 		InvoiceSummary summary2 = invoiceGenerator.getInvoiceSummary(userID2);
 		InvoiceSummary expectedInvoiceSummary2 = new InvoiceSummary(2, 45);
 		assertEquals(expectedInvoiceSummary2, summary2);
