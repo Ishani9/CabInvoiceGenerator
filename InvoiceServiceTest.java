@@ -25,18 +25,18 @@ public class InvoiceServiceTest {
 	}
 	
 	/**
-	 * UC 2
+	 * UC 3
 	 * 
 	 */
 	@Test
-	public void givenMultipleRides_shouldReturn_TotalFare() {
+	public void givenMultipleRides_shouldReturn_InvoiceSummary() {
 		InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
 		Ride[] rides = { new Ride(2.0, 5),
-				         new Ride(0.1, 1)
-		               };
-		Double fare = invoiceGenerator.calculateFare(rides);
-		Double cfare = 30.0;
-		assertEquals(cfare, fare);	
+		         new Ride(0.1, 1)
+              };
+		InvoiceSummary summary = invoiceGenerator.calculateFare(rides);
+		InvoiceSummary expectedInvoiceSummary = new InvoiceSummary(2, 30);
+		assertEquals(expectedInvoiceSummary, summary);
 	}
 	
 }
