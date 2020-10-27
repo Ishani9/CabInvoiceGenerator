@@ -8,13 +8,6 @@ public class InvoiceGenerator {
 		rideRepository = new RideRepository();
 	}
 	
-	
-	/**
-	 * UC 2, 3
-	 * 
-	 * @param rides
-	 * @return
-	 */
 	public InvoiceSummary calculateFare(Ride[] rides) {
 		double totalFare = 0;
 		for (Ride ride : rides) {

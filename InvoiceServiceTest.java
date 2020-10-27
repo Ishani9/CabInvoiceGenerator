@@ -18,11 +18,6 @@ public class InvoiceServiceTest {
 		rideRepository = new RideRepository();
 	}
 	
-	
-	/**
-	 * UC 3
-	 * 
-	 */
 	@Test
 	public void givenMultipleRides_shouldReturn_InvoiceSummary() {
 		Ride[] rides = { new Ride(CabRide.NORMAL, 2.0, 5),
@@ -32,10 +27,7 @@ public class InvoiceServiceTest {
 		assertEquals(expectedInvoiceSummary, summary);
 	}
 	
-	/**
-	 * UC 4
-	 * 
-	 */
+	
 	@Test
 	public void givenUserIDAndRides_shouldReturn_InvoiceSummary() {
 		String userID = "XYZ";
